@@ -1,0 +1,158 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>SLIDER</title>
+	<script src="https://code.jquery.com/jquery-latest.js"></script>
+	<link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+	<script src="https://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+	<script src="jquery.ui.touch-punch.min.js"></script>
+	<meta name=viewport count="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	<style type="text/css">
+	.ui-slider-handle {
+		width: 30px !important;
+		height: 30px !important;
+		border-radius: 15px 15px 15px 15px !important;
+		-webkit-border-radius: 15px 15px 15px 15px !important;
+		background: -webkit-linear-gradient(left, #9ba0aa, #f01414);
+		background: -o-linear-gradient(left, #9ba0aa, #f01414);
+		background: -ms-linear-gradient(left, #9ba0aa, #f01414);
+		background: linear-gradient(left, #9ba0aa, #f01414);
+		border: 3px solid #9ba0aa;
+		top: 50% !important;
+		margin-top: -15px !important;
+		margin-left: -15px !important;
+		cursor: pointer !important;
+		outline: none !important;
+		max-width: 500px;
+	}
+	.ui-slider {
+		width: 90%;
+		max-width: 250px;
+		margin: auto;
+	}
+	h1 { 
+		font-family: Arial, Helvetica, Verdana, sans-serif; 
+		font-size: 150%; 
+		font-weight: lighter; 
+   }
+	h2 { 
+		font-family: Arial, Helvetica, Verdana, sans-serif; 
+		font-size: 100%;
+		font-weight: lighter; 
+	}
+	.opt1 {
+		border: 3px solid #9ba0aa; 
+		border-radius: 8px; 
+		width: 13%; 
+		text-align: center; 
+		background-color: #9ba0aa; 
+		color: white;
+		position: relative;
+		padding: 2px;
+	}
+	.opt2 {
+		border: 3px solid #9ba0aa; 
+		border-radius: 8px; 
+		width: 13%; 
+		text-align: center; 
+		background-color: #9ba0aa; 
+		color: white;
+		position: relative;
+		padding: 2px;
+	}
+	.opt3 {
+		border: 3px solid #f01414; 
+		border-radius: 8px; 
+		width: 13%; 
+		text-align: center; 
+		background-color: #f01414; 
+		color: white;
+		position: relative;
+		padding: 2px;
+	}
+	</style>
+	<script type="text/javascript">
+	$(document).ready(function(){
+	$('#widget').draggable();
+	$( "#slider" ).slider({
+		value : 0,
+		min : 0,
+		max : 50,
+		step : 1,
+		create: function( event, ui ) {
+		val = $( "#slider" ).slider("value");
+		$( "#countSlider" ).html( val );
+	 },
+	slide: function( event, ui ) {
+		$( "#countSlider" ).html( ui.value );
+		if ((ui.value >=0)&&(ui.value<16)){
+			$('.opt1').css('padding','0px');
+			$('.opt2').css('padding','2px');   
+			$('.opt3').css('padding','2px');
+			}			
+			if ((ui.value >=16)&&(ui.value<33)){
+			$('.opt1').css('padding','2px');
+			$('.opt2').css('padding','0px');
+			$('.opt3').css('padding','2px');
+			}
+			if ((ui.value >=33)&&(ui.value<=50)){
+			$('.opt1').css('padding','2px');
+			$('.opt2').css('padding','2px');
+			$('.opt3').css('padding','0px');
+			}
+	if ((ui.value >=0)&&(ui.value<5)){
+		$('.ui-slider-handle').css({'background-image': '-webkit-linear-gradient(left, #e6e6e6, #e6e6e6)'});
+	}
+	if ((ui.value >=5)&&(ui.value<10)){
+		$('.ui-slider-handle').css({'background-image': '-webkit-linear-gradient(left, #e6e6e6, #ef8f8f)'});
+	}
+	if ((ui.value >=10)&&(ui.value<15)){
+		$('.ui-slider-handle').css({'background-image': '-webkit-linear-gradient(left, #ffe0e0, #e87b7b)'});
+	}
+	if ((ui.value >=15)&&(ui.value<20)){
+		$('.ui-slider-handle').css({'background-image': '-webkit-linear-gradient(left, #ffcfcf, #ec6565)'});
+	}
+	if ((ui.value >=20)&&(ui.value<25)){
+		$('.ui-slider-handle').css({'background-image': '-webkit-linear-gradient(left, #fdc2c2, #e85555)'});
+	}
+	if ((ui.value >=25)&&(ui.value<30)){
+		$('.ui-slider-handle').css({'background-image': '-webkit-linear-gradient(left, #d89797, #ea4747)'});
+	}
+	if ((ui.value >=30)&&(ui.value<35)){
+		$('.ui-slider-handle').css({'background-image': '-webkit-linear-gradient(left, #e67676, #f01414)'});
+	}
+	if ((ui.value >=35)&&(ui.value<40)){
+		$('.ui-slider-handle').css({'background-image': '-webkit-linear-gradient(left, #f01414, #f01414)'});
+	}
+	if ((ui.value >=40)&&(ui.value<45)){
+		$('.ui-slider-handle').css({'background-image': '-webkit-linear-gradient(left, #f01414, #f01414)'});
+	}
+	if ((ui.value >=45)&&(ui.value<=50)){
+		$('.ui-slider-handle').css({'background-image': '-webkit-linear-gradient(left, #f01414, #f01414)'});
+	}
+	}
+	});
+	});
+	</script> 
+</head>
+<body> 
+	<div style="text-align: center; max-width: 800px; margin: auto;">
+		<img style="width: device-width" src="backg.jpg"><br>
+		<h1>Dein Level</h1>
+		<div>
+			<span class="opt1" >&nbsp;neu&nbsp;</span>  
+			<span class="opt2" >&nbsp;pro&nbsp;</span>  
+			<span class="opt3" >&nbsp;ext&nbsp;</span>
+		</div> 
+		<br>
+		<img style="max-width: 500px" src="lines.jpg" height="15%">
+		<div id="slider"></div>
+		<br>
+		<!--Value:&nbsp;
+		<span id="countSlider"></span>
+		<br>-->
+		<ins style="color: #282d37">Erfahre mehr uber den Regler</ins>
+	</div>
+</body>
+</html>
